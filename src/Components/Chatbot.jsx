@@ -3,14 +3,42 @@ import { useState, useEffect, useRef } from "react";
 import { FaComments, FaTimes } from "react-icons/fa";
 
 const predefinedAnswers = {
-  welcome: "Hi 👋 I’m Nadeesha’s assistant. Ask me about projects or contact details.",
+  welcome:
+    "Hi 👋 I’m Nadeesha’s assistant. Ask me about projects, skills, university, or contact details.",
+
   project: `Here are my projects:
 1️⃣ PetHome.lk – Full-Stack Pet Adoption Platform
 2️⃣ Online Parking System – Landowner Module
 3️⃣ Eco Coin – Mobile Reward Application
 4️⃣ Travel Sri Lanka – Tourism Website
 
-For more details, check my Projects section!`,
+For more details, check the Projects section!`,
+
+  skills: `Here are my skills:
+
+🖥️ Frontend:
+• HTML, CSS, JavaScript
+• React.js
+• Tailwind CSS
+
+⚙️ Backend:
+• Node.js
+• Express.js
+
+🗄️ Databases:
+• MongoDB
+• MySQL
+• Firebase
+
+🎨 Design & Tools:
+• Figma
+• Adobe Illustrator
+• Git & GitHub`,
+
+  university: `I am currently studying at:
+🎓 University of Moratuwa  
+📘 National Diploma in Technology (IT)`,
+
   contact: `You can contact me at:
 📧 Email: shaniwijebandaraw@gmail.com
 📞 Phone: 0719141319
@@ -20,16 +48,15 @@ For more details, check my Projects section!`,
 function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    { sender: "bot", text: predefinedAnswers.welcome }
+  ]);
   const welcomeSentRef = useRef(false);
 
-  // Automatically greet when chat opens
+  // Auto greeting when chat opens
   useEffect(() => {
     if (open && !welcomeSentRef.current) {
       welcomeSentRef.current = true;
-      setTimeout(() => {
-        setMessages([{ sender: "bot", text: predefinedAnswers.welcome }]);
-      }, 0);
     }
   }, [open]);
 
@@ -39,16 +66,50 @@ function Chatbot() {
     const userMessage = { sender: "user", text: input };
     setMessages((prev) => [...prev, userMessage]);
 
-    // Determine bot response
     const text = input.toLowerCase();
-    let botMessage = { sender: "bot", text: "Sorry, I didn't understand that." };
+    let botMessage = {
+      sender: "bot",
+      text: "Sorry, I didn’t understand that. You can ask about projects, skills, university, or contact details 😊",
+    };
 
-    if (text.includes("project") || text.includes("projects")) {
-      botMessage = { sender: "bot", text: predefinedAnswers.project.replace(/\n/g, "<br/>") };
-    } else if (text.includes("contact") || text.includes("email") || text.includes("phone")) {
-      botMessage = { sender: "bot", text: predefinedAnswers.contact.replace(/\n/g, "<br/>") };
+    if (text.includes("project")) {
+      botMessage = {
+        sender: "bot",
+        text: predefinedAnswers.project.replace(/\n/g, "<br/>"),
+      };
+    } else if (
+      text.includes("skill") ||
+      text.includes("tools") ||
+      text.includes("technology")
+    ) {
+      botMessage = {
+        sender: "bot",
+        text: predefinedAnswers.skills.replace(/\n/g, "<br/>"),
+      };
+    } else if (
+      text.includes("university") ||
+      text.includes("study") ||
+      text.includes("degree") ||
+      text.includes("field")
+    ) {
+      botMessage = {
+        sender: "bot",
+        text: predefinedAnswers.university.replace(/\n/g, "<br/>"),
+      };
+    } else if (
+      text.includes("contact") ||
+      text.includes("email") ||
+      text.includes("phone")
+    ) {
+      botMessage = {
+        sender: "bot",
+        text: predefinedAnswers.contact.replace(/\n/g, "<br/>"),
+      };
     } else if (text.includes("hi") || text.includes("hello")) {
-      botMessage = { sender: "bot", text: "Hello! 👋 How can I help you today?" };
+      botMessage = {
+        sender: "bot",
+        text: "Hello! 👋 How can I help you today?",
+      };
     }
 
     setMessages((prev) => [...prev, botMessage]);
@@ -73,10 +134,12 @@ function Chatbot() {
           {/* Header */}
           <div className="flex justify-between items-center bg-blue-900 text-white px-4 py-3 rounded-t-xl">
             <span className="font-semibold">Chat with me</span>
-            <button onClick={() => {
-              welcomeSentRef.current = false;
-              setOpen(false);
-            }}>
+            <button
+              onClick={() => {
+                welcomeSentRef.current = false;
+                setOpen(false);
+              }}
+            >
               <FaTimes />
             </button>
           </div>
@@ -116,7 +179,7 @@ function Chatbot() {
         </div>
       )}
 
-      {/* Animation for slide-up */}
+      {/* Slide animation */}
       <style>
         {`
           @keyframes slide-up {
