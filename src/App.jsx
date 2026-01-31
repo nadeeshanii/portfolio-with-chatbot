@@ -1,6 +1,6 @@
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-import Home from "./pages/Home";
+import Home from "./Pages/Home";
 import Chatbot from "./Components/Chatbot";
 
 function App() {
