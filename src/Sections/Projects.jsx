@@ -15,8 +15,8 @@ const fallbackProjects = [
     description:
       "A full-stack pet adoption system with role-based authentication, secure admin access, and REST APIs for managing pets and adoption requests.",
     technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-    githubUrl: "#",
-    liveUrl: "#",
+    githubUrl: "https://github.com/nadeeshanii/PetHome.lk.git",
+    liveUrl: "https://www.linkedin.com/posts/nadeeshani-wijebandara-3b3768343_webdevelopment-mernstack-reactjs-activity-7420197629961121792-wXYq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFYTYjcBvzreAxQTPH1E1J1ohcqqFCsG-3Q",
   },
   {
     title: "Online Parking System – Landowner Module",
@@ -24,8 +24,8 @@ const fallbackProjects = [
     description:
       "Landowner dashboard to manage parking slots and booking records with real-time backend integration.",
     technologies: ["React.js", "Node.js", "MySQL", "Tailwind CSS","Firebase","Figma"],
-    githubUrl: "#",
-    liveUrl: "#",
+    githubUrl: "https://github.com/Seneshperera/justparklk",
+    liveUrl: "https://www.linkedin.com/posts/nadeeshani-wijebandara-3b3768343_smartcity-innovation-iot-activity-7385663269484642304-Og1C?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFYTYjcBvzreAxQTPH1E1J1ohcqqFCsG-3Q",
   },
   {
     title: "Eco Coin – Mobile Reward Application",
@@ -33,8 +33,8 @@ const fallbackProjects = [
     description:
       "A mobile application promoting eco-friendly activities through a reward-based system with secure authentication.",
     technologies: ["Flutter", "Firebase Authentication", "Figma"],
-    githubUrl: "#",
-    liveUrl: "#",
+    githubUrl: "https://github.com/nadeeshanii/eco_coins_frontend.git",
+    liveUrl: "https://www.linkedin.com/posts/nadeeshani-wijebandara-3b3768343_uiuxdesign-mobileappdesign-figma-activity-7372500683473960960-mkpC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFYTYjcBvzreAxQTPH1E1J1ohcqqFCsG-3Q",
   },
   {
     title: "Travel Sri Lanka – Tourism Website Frontend",
@@ -42,8 +42,8 @@ const fallbackProjects = [
     description:
       "An interactive tourism website showcasing Sri Lankan destinations with clean UI, responsive design, and smooth navigation.",
     technologies: ["React.js", "CSS3"],
-    githubUrl: "#",
-    liveUrl: "#",
+    githubUrl: "https://github.com/nadeeshanii/shani.git",
+    liveUrl: "https://www.linkedin.com/posts/nadeeshani-wijebandara-3b3768343_reactjs-frontenddevelopment-webdesign-activity-7327368244602847232-mBm5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFYTYjcBvzreAxQTPH1E1J1ohcqqFCsG-3Q",
   },
 ];
 
@@ -173,7 +173,7 @@ function Projects() {
                     rel="noopener noreferrer"
                     className="px-3 py-2 bg-blue-900 text-white rounded-lg font-medium hover:bg-blue-800 transition w-full sm:w-auto text-center"
                   >
-                    Live Demo
+                    Linkedin
                   </a>
                 )}
               </div>
